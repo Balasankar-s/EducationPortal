@@ -102,27 +102,27 @@ app.post('/teacher/login', (req, res) => {
     }
   });
 
-//   connection.query('SELECT * FROM users WHERE username = ?', [username], (error, results) => {
-//     if (error) {
-//       console.error(error);
-//       res.status(500).send('Internal server error');
-//     } else if (results.length === 0) {
-//       res.send('User does not exist');
-//     } else {
-//       // Compare password with bcrypt
-//       bcrypt.compare(password, results[0].password_hash, (err, result) => {
-//         if (err) {
-//           console.error(err);
-//           res.status(500).send('Internal server error');
-//         } else if (result === false) {
-//           res.send('Password is incorrect');
-//         } else {
-//           res.redirect('/teacher');
-//         }
-//       });
-//     }
-//   });
-// });
+  // connection.query('SELECT * FROM users WHERE username = ?', [username], (error, results) => {
+  //   if (error) {
+  //     console.error(error);
+  //     res.status(500).send('Internal server error');
+  //   } else if (results.length === 0) {
+  //     res.send('User does not exist');
+  //   } else {
+  //     // Compare password with bcrypt
+  //     bcrypt.compare(password, results[0].password_hash, (err, result) => {
+  //       if (err) {
+  //         console.error(err);
+  //         res.status(500).send('Internal server error');
+  //       } else if (result === false) {
+  //         res.send('Password is incorrect');
+  //       } else {
+  //         res.redirect('/teacher');
+  //       }
+  //     });
+  //   }
+  // });
+});
 
 
 
