@@ -90,17 +90,17 @@ app.post('/teacher/register', (req, res) => {
 app.post('/teacher/login', (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
-  // const query = `SELECT * FROM users WHERE username = '${username}' AND password_hash = '${password}' and role = 'teacher'`;
-  // connection.query(query, function (error, results) {
-  //   if (error) throw error;
-  //   if (results.length === 1) {
-  //     // Passwords match User is authenticated
-  //     res.redirect('/teacher');
-  //   } else {
-  //     // Passwords don't match or user not found
-  //     res.status(401).send('Invalid username or password');
-  //   }
-  // });
+  const query = `SELECT * FROM users WHERE username = '${username}' AND password_hash = '${password}' and role = 'teacher'`;
+  connection.query(query, function (error, results) {
+    if (error) throw error;
+    if (results.length === 1) {
+      // Passwords match User is authenticated
+      res.redirect('/teacher');
+    } else {
+      // Passwords don't match or user not found
+      res.status(401).send('Invalid username or password');
+    }
+  });
 
 
   connection.query('SELECT * FROM users WHERE username = ?', [username], (error, results) => {
